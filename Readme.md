@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
-* Студент: [Александр Гурбанов](https://up.htmlacademy.ru/htmlcss-individual/3/user/548235).
-* Наставник: `Неизвестно`.
+- Студент: [Александр Гурбанов](https://up.htmlacademy.ru/htmlcss-individual/3/user/548235).
+- Наставник: [Андрей Грачев](https://htmlacademy.ru/profile/angra).
 
 ---
 
