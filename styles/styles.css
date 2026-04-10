@@ -301,6 +301,15 @@ body {
   }
 }
 
+.subscription--white-bg {
+  background: none;
+  color: var(--color-black);
+
+  .subscription__description {
+    color: var(--color-grey);
+  }
+}
+
 /* Footer */
 
 .social-links {
