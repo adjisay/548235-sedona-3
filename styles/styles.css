@@ -148,6 +148,15 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  .user-menu__link {
+    text-decoration: none;
+    color: var(--color-black);
+  }
+
+  .user-menu__link > span {
+    color: var(--color-black);
+  }
 }
 
 /* Main Index */
@@ -198,7 +207,7 @@ body {
   background-color: var(--color-blue);
   color: var(--color-white);
 
-  -description {
+  .advantages__item-description {
     color: var(--color-white);
   }
 }
