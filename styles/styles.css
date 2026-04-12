@@ -56,6 +56,7 @@
 }
 
 .button {
+  display: block;
   padding: 8px 50px;
   border: none;
   border-radius: 4px;
@@ -171,12 +172,22 @@ body {
   list-style: none;
 
   .user-menu__link {
+    position: relative;
     display: block;
+    padding: 20px 15px;
     text-decoration: none;
     color: var(--color-black);
   }
 
-  .user-menu__link > span {
+  .user-menu__button {
+    width: 160px;
+    padding-inline: 34px;
+  }
+
+  .user-menu__count {
+    position: absolute;
+    top: 5px;
+    right: 0;
     color: var(--color-black);
   }
 }
@@ -370,10 +381,18 @@ body {
     line-height: 26px;
   }
 
+  .subscription__form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 684px;
+  }
+
   .subscription__email {
+    flex-grow: 1;
     padding: 14px 20px;
-    background-color: var(--color-off-white);
     border: none;
+    border-radius: 4px 0 0 4px;
+    background-color: var(--color-off-white);
     font-family: 'PT Sans';
     font-size: 18px;
     line-height: 24px;
@@ -530,9 +549,15 @@ body {
 }
 
 .hotel-results {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 40px;
   padding: 50px 70px 60px;
 
   .hotel-results__title {
+    margin: 0;
+    margin-right: 200px;
     width: 340px;
     font-size: 30px;
     font-weight: 700;
@@ -541,6 +566,7 @@ body {
   }
 
   .hotel-results__select {
+    margin-right: auto;
     padding: 14px 20px;
     width: 292px;
     border: 2px solid var(--color-light-gray);
@@ -560,6 +586,31 @@ body {
   padding: 0;
   width: 160px;
   list-style: none;
+
+  .sort-list__link {
+    display: block;
+    padding: 14px 12px;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--color-light-gray);
+    border-radius: 4px;
+  }
+
+  .sort-list__link--active {
+    border-color: var(--color-black);
+  }
+
+  .sort-list__link[href='catalog.html?view=tile'] {
+    background: url('../images/decorative-icons/sort-mode-tile.svg') no-repeat center;
+  }
+
+  .sort-list__link[href='catalog.html?view=card'] {
+    background: url('../images/decorative-icons/sort-mode-card.svg') no-repeat center;
+  }
+
+  .sort-list__link[href='catalog.html?view=list'] {
+    background: url('../images/decorative-icons/sort-mode-list.svg') no-repeat center;
+  }
 }
 
 .hotels-list {
@@ -573,6 +624,8 @@ body {
 }
 
 .hotel-card {
+  display: flex;
+  flex-direction: column;
   width: 340px;
   border: 1px solid var(--color-light-gray);
   border-radius: 4px;
@@ -606,22 +659,11 @@ body {
   padding: 0;
   list-style: none;
 
-  .pagination__item--dots > span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
-    line-height: 26px;
-  }
-
   .pagination__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     width: 60px;
     height: 60px;
+    padding-block: 12px;
     border-radius: 4px;
     background-color: var(--color-blue);
     font-size: 20px;
@@ -630,6 +672,12 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-white);
+  }
+
+  .pagination__link--dots {
+    background-color: transparent;
+    font-weight: 400;
+    color: var(--color-black);
   }
 
   .pagination__link--active {
