@@ -84,6 +84,14 @@
   &.button--reset {
     background-color: transparent;
   }
+
+  &.button--sorting {
+    padding: 14px 12px;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--color-light-gray);
+    border-radius: 4px;
+  }
 }
 
 .container {
@@ -204,9 +212,15 @@ body {
   align-items: center;
   padding-block: 51px 82px;
   min-height: 485px;
-  background:
-    url('../images/index-hero/hero-background-mask.svg') no-repeat center bottom / 100% auto,
-    var(--color-steel-teal) url('../images/index-hero/hero-background.jpg') no-repeat center top / cover;
+  background-color: var(--color-steel-teal);
+  background-image: url('../images/index-hero/hero-background-mask.svg'), url('../images/index-hero/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-position:
+    center calc(100% + 1px),
+    center top;
+  background-size:
+    100% auto,
+    cover;
 }
 
 .advantages {
@@ -242,6 +256,7 @@ body {
 }
 
 .advantages__item {
+  min-height: 385px;
   background-color: var(--color-blue-12);
 
   .advantages__item-title {
@@ -256,7 +271,7 @@ body {
   }
 }
 
-.advantages__item--blue {
+.advantages__item--accent {
   background-color: var(--color-blue);
   color: var(--color-white);
 
@@ -265,7 +280,7 @@ body {
   }
 }
 
-.advantages__item--lightblue {
+.advantages__item--muted {
   background-color: var(--color-blue-20);
 }
 
@@ -305,6 +320,7 @@ body {
 
 .services__item {
   padding: 81px 85px;
+  min-height: 385px;
   width: 400px;
 
   .services__item-title {
@@ -318,7 +334,7 @@ body {
     color: var(--color-grey);
   }
 
-  &.services__item--lightblue {
+  &.services__item--odd {
     background-color: var(--color-blue-12);
   }
 }
@@ -360,7 +376,12 @@ body {
   flex-direction: column;
   align-items: center;
   padding-block: 96px;
-  background: var(--color-steel-teal) url('../images/subscription/subscription-background.jpg') no-repeat center / cover;
+  min-height: 415px;
+  background-color: var(--color-steel-teal);
+  background-image: url('../images/subscription/subscription-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: var(--color-white);
 
   .subscription__title {
@@ -423,6 +444,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 40px 70px 30px;
+  min-height: 120px;
 }
 
 .social-links {
@@ -461,7 +483,12 @@ body {
   align-items: start;
   padding: 70px;
   padding-top: 35px;
-  background: var(--color-steel-teal) url('../images/catalog-filters/filters-background.jpg') no-repeat center / cover;
+  min-height: 412px;
+  background-color: var(--color-steel-teal);
+  background-image: url('../images/catalog-filters/filters-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: var(--color-white);
 
   .catalog__title {
@@ -529,11 +556,11 @@ body {
     outline: none;
   }
 
-  .filters__price-input[name='price-from'] {
+  .filters__price-input--from {
     border-radius: 4px 0 0 4px;
   }
 
-  .filters__price-input[name='price-to'] {
+  .filters__price-input--to {
     border-radius: 0 4px 4px 0;
   }
 
@@ -587,28 +614,19 @@ body {
   width: 160px;
   list-style: none;
 
-  .sort-list__link {
-    display: block;
-    padding: 14px 12px;
-    width: 48px;
-    height: 48px;
-    border: 2px solid var(--color-light-gray);
-    border-radius: 4px;
-  }
-
   .sort-list__link--active {
     border-color: var(--color-black);
   }
 
-  .sort-list__link[href='catalog.html?view=tile'] {
+  .sort-list__link--tile {
     background: url('../images/decorative-icons/sort-mode-tile.svg') no-repeat center;
   }
 
-  .sort-list__link[href='catalog.html?view=card'] {
+  .sort-list__link--card {
     background: url('../images/decorative-icons/sort-mode-card.svg') no-repeat center;
   }
 
-  .sort-list__link[href='catalog.html?view=list'] {
+  .sort-list__link--list {
     background: url('../images/decorative-icons/sort-mode-list.svg') no-repeat center;
   }
 }
@@ -627,6 +645,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 340px;
+  min-height: 438px;
   border: 1px solid var(--color-light-gray);
   border-radius: 4px;
   color: var(--color-grey);
@@ -661,9 +680,9 @@ body {
 
   .pagination__link {
     display: block;
-    width: 60px;
+    min-width: 60px;
     height: 60px;
-    padding-block: 12px;
+    padding: 12px;
     border-radius: 4px;
     background-color: var(--color-blue);
     font-size: 20px;

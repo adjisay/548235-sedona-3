@@ -115,9 +115,9 @@
               <legend class="filters__group-title">Стоимость, ₽:</legend>
               <div class="filters__price-range">
                 <label class="filters__price-label" for="price-from">от</label>
-                <input class="filters__price-input" id="price-from" name="price-from" type="number" min="0" value="0" />
+                <input class="filters__price-input filters__price-input--from" id="price-from" name="price-from" type="number" min="0" value="0" />
                 <label class="filters__price-label" for="price-to">до</label>
-                <input class="filters__price-input" id="price-to" name="price-to" type="number" min="0" value="9000" />
+                <input class="filters__price-input filters__price-input--to" id="price-to" name="price-to" type="number" min="0" value="9000" />
               </div>
             </fieldset>
             <button class="filters__button button button--blue" type="submit">Применить</button>
@@ -132,17 +132,17 @@
           </select>
           <ul class="hotel-results__sort sort-list">
             <li class="sort-list__item">
-              <a href="catalog.html?view=tile" class="sort-list__link button button--sorting sort-list__link--active">
+              <a href="catalog.html?view=tile" class="sort-list__link button button--sorting sort-list__link--tile sort-list__link--active" aria-current="page">
                 <span class="visually-hidden">Отобразить таблицей</span>
               </a>
             </li>
             <li class="sort-list__item">
-              <a href="catalog.html?view=card" class="sort-list__link button button--sorting">
+              <a href="catalog.html?view=card" class="sort-list__link button button--sorting sort-list__link--card">
                 <span class="visually-hidden">Отобразить карточками</span>
               </a>
             </li>
             <li class="sort-list__item">
-              <a href="catalog.html?view=list" class="sort-list__link button button--sorting">
+              <a href="catalog.html?view=list" class="sort-list__link button button--sorting sort-list__link--list">
                 <span class="visually-hidden">Отобразить списком</span>
               </a>
             </li>
