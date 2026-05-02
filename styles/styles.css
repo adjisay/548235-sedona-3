@@ -38,6 +38,7 @@
   --color-white-10: color-mix(in srgb, var(--color-white) 10%, transparent);
   --color-white-30: color-mix(in srgb, var(--color-white) 30%, transparent);
   --color-white-60: color-mix(in srgb, var(--color-white) 60%, transparent);
+  --color-off-white-80: color-mix(in srgb, var(--color-off-white) 80%, transparent);
   --color-blue-12: color-mix(in srgb, var(--color-blue-alt) 12%, transparent);
   --color-blue-20: color-mix(in srgb, var(--color-blue-alt) 20%, transparent);
   --color-blue-30: color-mix(in srgb, var(--color-blue-dark) 30%, transparent);
@@ -65,7 +66,7 @@
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
@@ -633,7 +634,7 @@ body {
     border: none;
     border-radius: 4px 0 0 4px;
     background-color: var(--color-off-white);
-    font-family: 'PT Sans';
+    font-family: 'PT Sans', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
@@ -959,7 +960,7 @@ body {
     width: 143px;
     background-color: var(--color-off-white);
     border: none;
-    font-family: 'PT Sans';
+    font-family: 'PT Sans', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
@@ -1094,7 +1095,7 @@ body {
     background-size: 12px 7px;
     border: 2px solid var(--color-light-gray);
     border-radius: 4px;
-    font-family: 'PT Sans';
+    font-family: 'PT Sans', sans-serif;
     font-size: 18px;
     line-height: 21px;
     color: var(--color-grey);
@@ -1290,4 +1291,308 @@ body {
     background-color: var(--color-off-white);
     color: var(--color-black);
   }
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-off-white-80);
+  z-index: 100;
+
+  .modal__container {
+    position: relative;
+    padding: 64px 70px;
+    width: 717px;
+    min-height: 576px;
+    background-color: var(--color-white);
+    border-radius: 30px;
+  }
+
+  .modal__title {
+    margin-top: 0;
+    margin-bottom: 64px;
+    max-width: 535px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    text-transform: uppercase;
+    text-align: start;
+  }
+
+  .modal__close-button {
+    position: absolute;
+    top: 64px;
+    right: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: var(--color-off-white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.15s ease-out;
+  }
+
+  .modal__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 23px;
+  }
+
+  .modal__field {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: baseline;
+    column-gap: 24px;
+  }
+
+  .modal__label {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: capitalize;
+  }
+
+  .modal__input-wrapper {
+    position: relative;
+    display: flex;
+    margin-bottom: 4px;
+  }
+
+  .modal__input {
+    flex-grow: 1;
+    padding: 12px 20px;
+    padding-right: 45px;
+    background-color: var(--color-off-white);
+    border: none;
+    border-radius: 4px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--color-black);
+    outline: none;
+    transition: background-color 0.15s ease-out;
+  }
+
+  .modal__calendar-button {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    background-image: url('../images/decorative-icons/modal-date.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 4px;
+    color: var(--color-gray);
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.15s ease-out;
+  }
+
+  .modal__field-message {
+    grid-column: 2;
+    justify-self: start;
+    margin: 0;
+    padding-inline: 20px;
+    font-size: 16px;
+  }
+
+  .modal__field-message--error {
+    color: var(--color-coral-red);
+  }
+
+  .modal__field-message--success {
+    color: var(--color-grey);
+  }
+
+  .modal__guests {
+    display: flex;
+    align-items: center;
+    gap: 74px;
+    margin-bottom: 25px;
+  }
+
+  .modal__guests-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 53px;
+  }
+
+  .modal__guests-label {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  .modal__counter {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: var(--color-off-white);
+    border-radius: 4px;
+  }
+  .modal__counter-button {
+    padding: 0;
+    width: 40px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    font-size: 30px;
+    color: var(--color-brown-30);
+    cursor: pointer;
+    transition: color 0.15s ease-out;
+  }
+
+  .modal__counter-value {
+    padding: 0;
+    width: 31px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    appearance: textfield;
+    outline: none;
+  }
+
+  .modal__counter-value::-webkit-outer-spin-button,
+  .modal__counter-value::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  .modal__tooltip-button {
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    background-color: var(--color-blue-alt);
+    background-image: url('../images/decorative-icons/modal-info-badge.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .modal__tooltip {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: -54px;
+    padding: 15px 18px 18px 22px;
+    width: 251px;
+    background-color: var(--color-grey);
+    border-radius: 10px;
+    box-shadow: 0 15px 30px 0 var(--color-black-30);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--color-white);
+    text-align: left;
+  }
+
+  .modal__tooltip::before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    width: 19px;
+    height: 9px;
+    background-image: url('../images/decorative-icons/modal-help-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateX(-50%);
+  }
+
+  .modal__submit {
+    width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+}
+
+.modal__close-button:hover,
+.modal__close-button:focus-visible,
+.modal__close-button:active {
+  background-color: var(--color-light-gray);
+}
+
+.modal__close-button:focus-visible {
+  outline: 3px solid var(--color-blue-alt);
+}
+
+.modal__close-button:active > svg {
+  opacity: 0.3;
+}
+
+.modal__input::placeholder {
+  color: var(--color-black-60);
+}
+
+.modal__input::selection {
+  background-color: var(--color-blue-alt);
+}
+
+.modal__input:hover,
+.modal__input:focus-visible {
+  background-color: var(--color-light-gray);
+}
+
+.modal__input:focus-visible {
+  outline: 3px solid var(--color-blue-alt);
+  outline-offset: -3px;
+}
+
+.modal__calendar-button:hover,
+.modal__calendar-button:focus-visible {
+  opacity: 1;
+}
+
+.modal__calendar-button:focus-visible {
+  outline: 3px solid var(--color-blue-alt);
+}
+
+.modal__counter-button:hover,
+.modal__counter-button:focus-visible {
+  color: var(--color-black);
+}
+
+.modal__counter-button:focus-visible {
+  outline: 3px solid var(--color-blue-alt);
+}
+
+.modal__counter-button:active {
+  color: var(--color-black-20);
+}
+
+.modal__tooltip-button:hover + .modal__tooltip,
+.modal__tooltip-button:focus-visible + .modal__tooltip {
+  display: block;
+}
+
+.modal--hidden {
+  display: none;
 }

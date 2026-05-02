@@ -30,7 +30,15 @@
         <ul class="page-header__user-menu user-menu">
           <li class="user-menu__item">
             <a href="#" class="user-menu__link">
-              <svg class="user-menu__icon user-menu__icon--search" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                class="user-menu__icon user-menu__icon--search"
+                aria-hidden="true"
+                focusable="false"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M19.5 18.0083L15.8 14.3287C16.8 13.0359 17.5 11.3453 17.5 9.4558C17.5 5.08011 13.9 1.5 9.5 1.5C5.1 1.5 1.5 5.17956 1.5 9.55525C1.5 13.9309 5.1 17.511 9.5 17.511C11.3 17.511 13 16.9144 14.4 15.8204L18.1 19.5L19.5 18.0083ZM9.5 15.5221C6.2 15.5221 3.5 12.837 3.5 9.55525C3.5 6.27348 6.2 3.5884 9.5 3.5884C12.8 3.5884 15.5 6.27348 15.5 9.55525C15.5 12.837 12.8 15.5221 9.5 15.5221Z"
                 />
@@ -40,7 +48,15 @@
           </li>
           <li class="user-menu__item">
             <a href="#" class="user-menu__link">
-              <svg class="user-menu__icon user-menu__icon--favorites" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                class="user-menu__icon user-menu__icon--favorites"
+                aria-hidden="true"
+                focusable="false"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M9.9 19C9.6 19 9.3 18.9 9.1 18.6C3.7 12.5 2.4 11.1 2.1 10.7C1.4 9.8 1 8.6 1 7.4C1 4.4 3.4 2 6.5 2C7.8 2 9 2.5 10 3.3C11 2.5 12.3 2 13.5 2C16.5 2 19 4.4 19 7.4C19 8.7 18.5 9.9 17.7 10.8L10.7 18.7C10.5 18.9 10.3 19 9.9 19ZM3.9 9.5C4.2 9.9 7.4 13.5 10 16.4L16.2 9.4C16.7 8.9 16.9 8.2 16.9 7.4C16.9 5.6 15.4 4.1 13.6 4.1C12.6 4.1 11.6 4.6 10.9 5.4C10.6 5.7 10.3 5.8 10 5.8C9.7 5.8 9.4 5.6 9.2 5.4C8.5 4.6 7.5 4.1 6.5 4.1C4.7 4.1 3.2 5.6 3.2 7.4C3.1 8.3 3.5 9 3.9 9.5C3.8 9.5 3.8 9.5 3.9 9.5Z"
                 />
@@ -226,6 +242,69 @@
           </a>
         </div>
       </footer>
+      <div class="modal modal--hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal__container">
+          <h2 class="modal__title" id="modal-title">Поиск гостиницы в Седоне</h2>
+          <button class="modal__close-button" type="button">
+            <span class="visually-hidden">Закрыть</span>
+            <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14 1.29231L12.7077 0L7 5.70769L1.29231 0L0 1.29231L5.70769 7L0 12.7077L1.29231 14L7 8.29231L12.7077 14L14 12.7077L8.29231 7L14 1.29231Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+          <form class="modal__form" action="https://echo.htmlacademy.ru/" method="get">
+            <div class="modal__field">
+              <label class="modal__label" for="date-from">Дата заезда:</label>
+              <div class="modal__input-wrapper">
+                <input class="modal__input" id="date-from" type="text" name="date-from" value="27 апреля 2020" placeholder="ДД.ММ.ГГГГ" />
+                <button class="modal__calendar-button" type="button">
+                  <span class="visually-hidden">Выбрать дату заезда</span>
+                </button>
+              </div>
+              <p class="modal__field-message modal__field-message--error">Мы не можем отправить вас в прошлое.</p>
+            </div>
+            <div class="modal__field">
+              <label class="modal__label" for="date-to">Дата выезда:</label>
+              <div class="modal__input-wrapper">
+                <input class="modal__input" id="date-to" type="text" name="date-to" value="1 сентября 2023" placeholder="ДД.ММ.ГГГГ" />
+                <button class="modal__calendar-button" type="button">
+                  <span class="visually-hidden">Выбрать дату выезда</span>
+                </button>
+              </div>
+              <p class="modal__field-message modal__field-message--success">На эти даты есть свободные номера. Пока есть.</p>
+            </div>
+            <div class="modal__guests">
+              <div class="modal__guests-group">
+                <span class="modal__guests-label">Взрослые:</span>
+                <div class="modal__counter">
+                  <button class="modal__counter-button modal__counter-button--decrease" type="button" aria-label="Уменьшить количество взрослых">−</button>
+                  <input class="modal__counter-value" id="adults-count" type="number" name="adults" value="2" readonly />
+                  <button class="modal__counter-button modal__counter-button--increase" type="button" aria-label="Увеличить количество взрослых">+</button>
+                </div>
+              </div>
+              <div class="modal__guests-group">
+                <span class="modal__guests-label">
+                  Дети:
+                  <button class="modal__tooltip-button" type="button" aria-describedby="children-tooltip">
+                    <span class="visually-hidden">Информация</span>
+                  </button>
+                  <span class="modal__tooltip" role="tooltip" id="children-tooltip">
+                    Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+                  </span>
+                </span>
+                <div class="modal__counter">
+                  <button class="modal__counter-button modal__counter-button--decrease" type="button" aria-label="Уменьшить количество детей">−</button>
+                  <input class="modal__counter-value" id="children-count" type="number" name="children" value="2" readonly />
+                  <button class="modal__counter-button modal__counter-button--increase" type="button" aria-label="Увеличить количество детей">+</button>
+                </div>
+              </div>
+            </div>
+            <button class="modal__submit button button--blue" type="submit">Найти</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
