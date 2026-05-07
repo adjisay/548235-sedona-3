@@ -1144,8 +1144,9 @@ body {
 
 .sort-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-self: baseline;
+  gap: 8px;
   margin: 0;
   padding: 0;
   width: 160px;
